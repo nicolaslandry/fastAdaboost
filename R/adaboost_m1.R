@@ -22,10 +22,10 @@
 #'. \emph{In Proceedings of the Thirteenth International Conference on Machine Learning}, 
 #'pp. 148--156, Morgan Kaufmann.
 
-adaboost <-function(formula, data, nIter,...)
+adaboost <-function(formula, data, nIter,control.rpart,...)
 {
   theCall <- match.call()
-  adaboost_object <- adaboost_fast(formula,data,nIter, method="M1")
+  adaboost_object <- adaboost_fast(formula,data,nIter, method="M1",control.rpart)
   adaboost_object$call <- theCall
   return(adaboost_object)
 }
